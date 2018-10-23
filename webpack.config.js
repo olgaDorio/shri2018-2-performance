@@ -6,18 +6,23 @@ const path = require('path');
 module.exports = {
   mode: 'production',
 
-  entry: {
-    banner: './scripts/banner.js',
-    // style: './styles/bootstrap.css'
+  optimization: {
+    minimize: true,
   },
+
+  entry: {
+    scripts: './scripts.js',
+  },
+
   output: {
     path: path.resolve(__dirname, './docs'),
     filename: '[name].js'
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
-      excludeAssets: [/banner.js/],
+      excludeAssets: [/scripts.js/],
       minify: {
         removeComments: true,
         // collapseWhitespace: true,
@@ -33,6 +38,4 @@ module.exports = {
     ]),
   ]
 };
-
-// node_modules/.bin/purifycss bootstrap.css index.html -o bootstrap-min.css -w img
 
