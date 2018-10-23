@@ -3,6 +3,7 @@ const arrowRightDevs = document.querySelector('.devices__paginator .paginator__a
 const panelCountDevs = document.querySelectorAll('.devices__panel').length;
 const devices = document.querySelector('.devices');
 const pagiantorDevs = document.querySelector('.devices__paginator');
+
 let currentPageDevs = 1;
 
 pagiantorDevs.classList.toggle('paginator_hide', panelCountDevs < 7);
@@ -35,6 +36,7 @@ const panelCountScens = document.querySelectorAll('.scenarios__panel').length;
 const pageCountScens = document.querySelectorAll('.scenarios__page').length;
 const scenarios = document.querySelector('.scenarios');
 const pagiantorScens = document.querySelector('.scenarios__paginator');
+
 let currentPage = 1;
 
 pagiantorScens.classList.toggle('paginator_hide', panelCountScens <= 9);
@@ -75,12 +77,6 @@ const popup = document.querySelector('.filter__select-popup');
 selectButton.addEventListener('click', function() {
   popup.classList.toggle('filter__select-popup_open');
 });
-
-// let widths = '';
-// window.addEventListener('scroll', function() {
-//     widths += document.querySelectorAll('body')[0].offsetWidth;
-//     document.querySelector('.stats').innerHTML = widths;
-// });
 
 selectOptions.forEach(o => {
   o.addEventListener('click', function(e) {
