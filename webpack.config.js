@@ -25,7 +25,13 @@ module.exports = {
       excludeAssets: [/scripts.js/],
       minify: {
         removeComments: true,
-        // collapseWhitespace: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        html5: true,
+        // preserveLineBreaks
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true,
+        useShortDoctype: true,
       },
     }),
 
