@@ -24,11 +24,10 @@ module.exports = {
       template: 'index.html',
       excludeAssets: [/scripts.js/],
       minify: {
+        html5: true,
         removeComments: true,
         collapseWhitespace: true,
         conservativeCollapse: true,
-        html5: true,
-        // preserveLineBreaks
         removeAttributeQuotes: true,
         removeEmptyAttributes: true,
         useShortDoctype: true,
