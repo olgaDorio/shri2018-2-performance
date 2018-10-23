@@ -30,7 +30,7 @@ module.exports = {
       { from: 'fonts', to: 'fonts' },
       { from: 'assets', to: 'assets' },
       { from: 'root', to: '' },
-    ])
+    ]),
   ]
 };
 
