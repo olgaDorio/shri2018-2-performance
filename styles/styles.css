@@ -500,7 +500,13 @@ html {
 .paginator__arrow {
   opacity: 1;
   cursor: pointer;
+  background: url('assets/arrow-left.svg') no-repeat center;
 }
+
+.paginator__arrow_right {
+  transform: rotate(180deg);
+}
+
 .paginator__arrow:hover {
   opacity: 0.5;
 }
