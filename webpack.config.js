@@ -20,11 +20,11 @@ module.exports = {
       excludeAssets: [/banner.js/],
       minify: {
         removeComments: true,
-        // useShortDoctype: true,
+        useShortDoctype: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
         // collapseWhitespace: true,
-        // removeRedundantAttributes: true,
-        // removeScriptTypeAttributes: true,
-        // removeStyleLinkTypeAttributes: true,
       },
     }),
 
