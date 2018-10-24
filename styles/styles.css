@@ -594,7 +594,8 @@ html {
   padding-right: 31px;
 }
 .weather__item_cloud-drizzle {
-  background: url("assets/cloud-drizzle.svg") 100% 70%/26px no-repeat;
+  /*background: url("assets/cloud-drizzle.svg") 100% 70%/26px no-repeat;*/
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMCAwaDI2djI2SDB6Ii8+PHBhdGggZD0iTTE1IDIwdjJtMC05djJtLTUgN3YybTAtOXYybTExIC41OEE1IDUgMCAwIDAgMTkgOGgtMS4yNkE4IDggMCAxIDAgNSAxNi4yNSIgc3Ryb2tlPSIjMzMzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIvPjwvZz48L3N2Zz4=) 100% 70%/26px no-repeat;
 }
 .stats {
   opacity: 0;
