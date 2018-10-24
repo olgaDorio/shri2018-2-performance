@@ -6,15 +6,19 @@
 
     <title>Smarthome</title>
 
+    <style>
+      .page {
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+    </style>
+
     <link rel="preload" href="fonts/PTS75F_W.woff2" as="font" crossorigin>
     <link rel="preload" href="fonts/PTN77F_W.woff2" as="font" crossorigin>
 
     <link rel="preload" href="assets/sh.webp" as="image">
 
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-
     <link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
-
     <link rel="preload" href="modal.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="bootstrap.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="fonts/pt_sans.css" as="style" onload="this.rel='stylesheet'">
