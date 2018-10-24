@@ -17,9 +17,6 @@ module.exports = {
 
   entry: {
     scripts: './scripts/scripts.js',
-    modal: './styles/modal.css',
-    bootstrap: './styles/bootstrap.css',
-    styles: './styles/styles.css',
   },
 
   output: {
