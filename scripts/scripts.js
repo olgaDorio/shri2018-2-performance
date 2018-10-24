@@ -1,3 +1,9 @@
+// import('./../styles/bootstrap.css');
+
+import(/* webpackChunkName: "modal" */  './../styles/modal.css');
+import(/* webpackChunkName: "styles" */  './../styles/styles.css');
+import(/* webpackChunkName: "bootstrap" */  './../styles/bootstrap.css');
+
 const arrowLeftDevs = document.querySelector('.devices__paginator .paginator__arrow_left');
 const arrowRightDevs = document.querySelector('.devices__paginator .paginator__arrow_right');
 const panelCountDevs = document.querySelectorAll('.devices__panel').length;

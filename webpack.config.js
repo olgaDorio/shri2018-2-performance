@@ -1,6 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PurifyCSSPlugin = require('purifycss-webpack');
+
 const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+
+const glob = require('glob');
 const path = require('path');
 
 module.exports = {
@@ -19,7 +24,38 @@ module.exports = {
     filename: '[name].js'
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use:  ['style-loader', MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+
+      {
+        test: /\.(webp)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              emitFile: false,
+            }
+          }
+        ]
+      }
+    ]
+  },
+
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+
+    new PurifyCSSPlugin({
+      paths: ['./scripts/scripts.js', './scripts/popup.js', './index.html'],
+      minimize: true,
+    }),
+
     new HtmlWebpackPlugin({
       inject: false,
       template: 'index.html',
