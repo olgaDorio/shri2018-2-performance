@@ -11,7 +11,7 @@ module.exports = {
   },
 
   entry: {
-    scripts: './scripts.js',
+    scripts: './scripts/scripts.js',
   },
 
   output: {
@@ -21,25 +21,26 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
+      inject: false,
       template: 'index.html',
-      excludeAssets: [/scripts.js/],
+      // excludeAssets: [/scripts.js/],
       minify: {
         html5: true,
         removeComments: true,
+        useShortDoctype: true,
         collapseWhitespace: true,
         conservativeCollapse: true,
         removeAttributeQuotes: true,
         removeEmptyAttributes: true,
-        useShortDoctype: true,
       },
     }),
 
     new HtmlWebpackExcludeAssetsPlugin(),
 
     new CopyWebpackPlugin([
+      { from: 'root', to: '' },
       { from: 'fonts', to: 'fonts' },
       { from: 'assets', to: 'assets' },
-      { from: 'root', to: '' },
     ]),
   ]
 };
