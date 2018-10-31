@@ -1,3 +1,30 @@
+const supportsPreload = () => {
+  return document.createElement('link').relList.supports('preload');
+};
+
+const canUseWebP = () => {
+  var elem = document.createElement('canvas');
+
+  if (elem.getContext && elem.getContext('2d')) {
+    return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+  } else {
+    return false;
+  }
+};
+
+if (!supportsPreload()) {
+  import('fg-loadcss').then((fg) => {
+    fg.loadCSS('styles.css');
+    fg.loadCSS('modal.css');
+    fg.loadCSS('bootstrap.css');
+    fg.loadCSS('fonts/pt_sans.css');
+  })
+}
+
+document.body.classList.add('js');
+document.body.classList.remove('no-js');
+document.body.classList.add(`${canUseWebP() ? '' : 'no-'}webp`)
+
 const arrowLeftDevs = document.querySelector('.devices__paginator .paginator__arrow_left');
 const arrowRightDevs = document.querySelector('.devices__paginator .paginator__arrow_right');
 const panelCountDevs = document.querySelectorAll('.devices__panel').length;
@@ -8,17 +35,17 @@ let currentPageDevs = 1;
 
 pagiantorDevs.classList.toggle('paginator_hide', panelCountDevs < 7);
 
-arrowRightDevs.addEventListener('click', function () {
-    currentPageDevs += 1;
-    arrowLeftDevs.classList.toggle('paginator__arrow_disabled', currentPageDevs === 1);
-    devices.scroll({
-      top: 0,
-      left: 1366,
-      behavior: 'smooth'
-    });
+arrowRightDevs.addEventListener('click', function() {
+  currentPageDevs += 1;
+  arrowLeftDevs.classList.toggle('paginator__arrow_disabled', currentPageDevs === 1);
+  devices.scroll({
+    top: 0,
+    left: 1366,
+    behavior: 'smooth'
+  });
 });
 
-arrowLeftDevs.addEventListener('click', function () {
+arrowLeftDevs.addEventListener('click', function() {
   if (currentPageDevs > 1) {
     currentPageDevs -= 1;
     arrowLeftDevs.classList.toggle('paginator__arrow_disabled', currentPageDevs === 1);
@@ -41,7 +68,7 @@ let currentPage = 1;
 
 pagiantorScens.classList.toggle('paginator_hide', panelCountScens <= 9);
 
-arrowRightScens.addEventListener('click', function () {
+arrowRightScens.addEventListener('click', function() {
   if (currentPage < pageCountScens) {
     currentPage += 1;
     arrowRightScens.classList.toggle('paginator__arrow_disabled', currentPage === pageCountScens);
@@ -54,7 +81,7 @@ arrowRightScens.addEventListener('click', function () {
   }
 });
 
-arrowLeftScens.addEventListener('click', function () {
+arrowLeftScens.addEventListener('click', function() {
   if (currentPage > 1) {
     currentPage -= 1;
     arrowRightScens.classList.toggle('paginator__arrow_disabled', currentPage === pageCountScens);
@@ -89,7 +116,7 @@ selectOptions.forEach(o => {
   })
 });
 
-document.querySelector('.menu__icon').addEventListener('click', function () {
+document.querySelector('.menu__icon').addEventListener('click', function() {
   document.querySelector('.menu').classList.toggle('menu_open');
 });
 

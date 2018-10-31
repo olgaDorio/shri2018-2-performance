@@ -180,8 +180,25 @@
   padding: 0 20px 0 25px;
   display: flex;
   justify-content: space-between;
-  background: url("assets/sh.webp") center center/cover no-repeat;
+  /* background: url("assets/sh.webp") center center/cover no-repeat; */
+  background: none center center/cover no-repeat;
 }
+
+/* Result pending */
+.js .main {
+   background-image: none;
+}
+/* No JS / WebP not supported */
+   .no-js .main,
+   .js.no-webp .main {
+   background-image: url("assets/sh.jpg");
+}
+/* WebP supported */
+   .js.webp .main {
+   background-image: url("assets/sh.webp");
+}
+
+
 .main__greeting {
   margin-top: 6px;
   font-size: 27px;
