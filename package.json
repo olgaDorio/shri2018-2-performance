@@ -5,7 +5,7 @@
   "main": "banner.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack && npm run minify-bootstrap && npm run minify-styles && npm run minify-modal",
-    "minify-bootstrap": "node_modules/.bin/purifycss styles/bootstrap1.css index.html -o docs/bootstrap.css -m",
+    "minify-bootstrap": "node_modules/.bin/purifycss styles/bootstrap.css index.html -o docs/bootstrap.css -m",
     "minify-styles": "node_modules/.bin/purifycss styles/styles.css index.html scripts/scripts.js -o docs/styles.css -m",
     "minify-modal": "node_modules/.bin/purifycss styles/modal.css index.html scripts/scripts.js -o docs/modal.css -m"
   },
